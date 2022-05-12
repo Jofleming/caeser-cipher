@@ -60,3 +60,11 @@ def test_crack_nonsense():
     actual = crack(encrypted)
     expected = ""
     assert actual == expected
+
+def test_crack_final_key():
+    phrase = 'My dog is really cute.'
+    encrypted = encrypt(phrase, 25)
+    actual = crack(encrypted)
+    expected = phrase
+    assert actual == expected
+    
